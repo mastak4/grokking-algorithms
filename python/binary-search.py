@@ -9,14 +9,6 @@ for x in range(5):
     print(x)
 
 def my_binary_search(list, number):
-    '''
-    Test docstring
-    
-    list -- argument 1
-
-    number -- argument 2
-    
-    returns: String with index position'''
     result = None
     
     lo = 0
@@ -31,6 +23,18 @@ def my_binary_search(list, number):
             hi = mid - 1
         else:
             lo = mid + 1
+
+
+def binary_search_recursive(array, number):
+    mid = math.floor((len(array) - 1) / 2)
+    if mid < 0:
+        return None
+    elif array[mid] == number:
+        return mid
+    elif array[mid] < number:
+        return binary_search_recursive(array[mid + 1:], number)
+    else:
+        return binary_search_recursive(array[:mid], number)
 
 
 print('found index {0} for 0'.format(my_binary_search(elements, 0)))

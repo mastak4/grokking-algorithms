@@ -1,4 +1,4 @@
-from re_binary_search import binary_search
+from rewind.re_binary_search import binary_search
 import array
 
 def test_existing_items_found():
